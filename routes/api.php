@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 //API Auth
 Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register']);
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
-Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
+
 
 //Public
 Route::get('/product', [\App\Http\Controllers\ProductController::class, 'index']);
@@ -29,6 +29,8 @@ Route::group(['middleware'=>['auth:sanctum']], function(){
     Route::post('/product/store', [\App\Http\Controllers\ProductController::class, 'store']);
     Route::post('/product/update', [\App\Http\Controllers\ProductController::class, 'update']);
     Route::delete('/product/{id}', [\App\Http\Controllers\ProductController::class, 'delete']);
+
+    Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
