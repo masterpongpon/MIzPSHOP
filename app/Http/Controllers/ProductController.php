@@ -61,7 +61,15 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $request->id;
+
+        $product = Product::find($id);
+        //dd($product);
+        $product->name = $request->name;
+        $product->image = $request->image;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->save();
     }
 
     /**
@@ -72,7 +80,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::find($id);
+        $product->delete();
     }
 
     public function search($name)
