@@ -20,9 +20,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body  style="background-color: #ADFFE6 ;" style="width: auto;" style="height: 100%;">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm" style="background-color: #00E7A0;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     MIZPSHOP
